@@ -16,5 +16,5 @@ export const askForPlayers = () => {
     totalPlayers > 4
   );
 
-  return totalPlayers;
+  return parseInt(totalPlayers);
 };
