@@ -9,8 +9,8 @@ export const createPlayers = () => {
 
   for (let i = 0; i <= totalPlayers; i++) {
     i === totalPlayers
-      ? (arrayOfPlayers[i] = `computer`)
-      : (arrayOfPlayers[i] = `player${[i + 1]}`);
+      ? (arrayOfPlayers[i] = `.computer`)
+      : (arrayOfPlayers[i] = `.player${[i + 1]}`);
   }
 
   return arrayOfPlayers;

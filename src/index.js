@@ -5,22 +5,27 @@ import { stopGame } from './usecases/stop-game';
 
 export const Blackjack = () => {
   let newGameConfig;
+  let deck;
+  let arrayOfPlayers;
+  let currentPlayer;
 
   const btnNuevoJuego = document.querySelector('.new-game');
   btnNuevoJuego.addEventListener('click', () => {
     newGameConfig = newGame();
+    deck = newGameConfig.deck;
+    arrayOfPlayers = newGameConfig.arrayOfPlayers;
+    currentPlayer = arrayOfPlayers.shift();
   });
 
   const btnRequestCard = document.querySelector('.request-card');
   btnRequestCard.addEventListener('click', () => {
-    const { deck, arrayOfPlayers } = newGameConfig;
-    const currentPlayer = arrayOfPlayers.shift();
-
-    if (currentPlayer) {
-      renderCard(requestCard(deck), currentPlayer);
-    }
+    renderCard(requestCard(deck), currentPlayer);
   });
 
   const btnStopGame = document.querySelector('.stop-game');
-  btnStopGame.addEventListener('click', () => stopGame());
+  btnStopGame.addEventListener('click', () => {
+    stopGame();
+    console.log(deck, currentPlayer);
+    currentPlayer = arrayOfPlayers.shift();
+  });
 };
