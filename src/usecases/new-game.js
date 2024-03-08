@@ -1,3 +1,4 @@
+import { askForPlayers } from './ask-for-players';
 import { createDeck } from './create-deck';
 /**
  *
@@ -11,6 +12,8 @@ export const newGame = () => {
 
     [deck[i], deck[j]] = [deck[j], deck[i]];
   }
+
+  askForPlayers();
 
   return deck;
 };

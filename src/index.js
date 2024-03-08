@@ -4,18 +4,16 @@ import { requestCard } from './usecases/request-card';
 import { stopGame } from './usecases/stop-game';
 
 export const Blackjack = () => {
-  const deck = newGame();
+  let deck = [];
 
   const btnNuevoJuego = document.querySelector('.new-game');
-  btnNuevoJuego.addEventListener('click', () => newGame());
+  btnNuevoJuego.addEventListener('click', () => {
+    deck = newGame();
+  });
 
   const btnRequestCard = document.querySelector('.request-card');
-  btnRequestCard.addEventListener('click', () => {
-    renderCard(requestCard(deck));
-  });
+  btnRequestCard.addEventListener('click', () => renderCard(requestCard(deck)));
 
   const btnStopGame = document.querySelector('.stop-game');
-  btnStopGame.addEventListener('click', () => {
-    stopGame();
-  });
+  btnStopGame.addEventListener('click', () => stopGame());
 };
