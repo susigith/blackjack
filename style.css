@@ -11,6 +11,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 a {
@@ -28,7 +29,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  box-sizing: border-box;
 }
 
 h1 {
@@ -37,8 +37,15 @@ h1 {
 }
 
 #app {
+  background-image: url(./public/table-background.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
   margin: 0 auto;
+  min-width: 768px;
   text-align: center;
+  width: 100vw;
 }
 
 .logo {
@@ -63,18 +70,29 @@ h1 {
 }
 
 button {
+  background-color: #14723c;
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
+  margin-top: 1.2em;
+  padding: 0.6em 1.2em;
   transition: border-color 0.25s;
 }
+
+.new-game {
+  background-color: #73154a;
+}
+
+.new-game:hover {
+  border-color: #eba5f2;
+}
+
 button:hover {
-  border-color: #646cff;
+  border-color: #23c769;
 }
 button:focus,
 button:focus-visible {
@@ -83,23 +101,36 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
     background-color: #ffffff;
   }
   a:hover {
     color: #747bff;
   }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
-.table-background {
-  background-image: url(./public/table-background.webp);
-  height: 100vh;
-  width: 100vw;
-  min-width: 768px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+h2 {
+  display: inline;
+}
+
+.player1,
+.computer {
+  text-align: left;
+  margin-left: 2em;
+}
+
+.computer {
+  margin-top: 2em;
+}
+
+.game-table {
+  margin-top: 3.8em;
+}
+
+.cards-deck {
+  margin-top: 1em;
+  min-height: 17em;
+}
+
+.cards {
+  height: 17em;
 }
