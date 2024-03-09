@@ -12,8 +12,10 @@ export const Blackjack = () => {
   const btnNuevoJuego = document.querySelector('.new-game');
   btnNuevoJuego.addEventListener('click', () => {
     newGameConfig = newGame();
+
     deck = newGameConfig.deck;
     arrayOfPlayers = newGameConfig.arrayOfPlayers;
+
     currentPlayer = arrayOfPlayers.shift();
   });
 
@@ -25,7 +27,6 @@ export const Blackjack = () => {
   const btnStopGame = document.querySelector('.stop-game');
   btnStopGame.addEventListener('click', () => {
     stopGame();
-    console.log(deck, currentPlayer);
     currentPlayer = arrayOfPlayers.shift();
   });
 };
