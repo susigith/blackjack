@@ -1,5 +1,5 @@
-export const renderCard = (card, jugador = '.player1') => {
-  const player = document.querySelector(jugador);
+export const renderCard = (card, jugador) => {
+  const player = document.querySelector(`.${jugador}`);
   const cardsDeck = player.querySelector('.cards-deck');
 
   const cardImg = document.createElement('img');

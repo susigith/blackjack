@@ -21,7 +21,7 @@ export const Blackjack = () => {
 
   const btnRequestCard = document.querySelector('.request-card');
   btnRequestCard.addEventListener('click', () => {
-    renderCard(requestCard(deck), currentPlayer);
+    renderCard(requestCard(deck), currentPlayer.id);
   });
 
   const btnStopGame = document.querySelector('.stop-game');
