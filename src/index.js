@@ -1,6 +1,7 @@
 import { renderCard } from './ui/render-card';
 import { newGame } from './usecases/new-game';
 import { requestCard } from './usecases/request-card';
+import { scoreCalculator } from './usecases/score-calculator';
 import { stopGame } from './usecases/stop-game';
 
 export const Blackjack = () => {
@@ -21,12 +22,16 @@ export const Blackjack = () => {
 
   const btnRequestCard = document.querySelector('.request-card');
   btnRequestCard.addEventListener('click', () => {
-    renderCard(requestCard(deck), currentPlayer.id);
+    let card = requestCard(deck);
+    renderCard(card, currentPlayer.id);
+    currentPlayer.score = scoreCalculator(currentPlayer, card);
+    console.log(currentPlayer);
   });
 
   const btnStopGame = document.querySelector('.stop-game');
   btnStopGame.addEventListener('click', () => {
     stopGame();
     currentPlayer = arrayOfPlayers.shift();
+    console.log(currentPlayer);
   });
 };
