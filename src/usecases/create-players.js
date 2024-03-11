@@ -1,3 +1,4 @@
+import { Player } from '../models/player';
 import { askForPlayers } from './ask-for-players';
 /**
  *
@@ -5,13 +6,14 @@ import { askForPlayers } from './ask-for-players';
  */
 export const createPlayers = () => {
   const totalPlayers = askForPlayers();
-  const arrayOfPlayers = [];
+  let arrayOfPlayers = [];
 
-  for (let i = 0; i <= totalPlayers; i++) {
-    i === totalPlayers
-      ? (arrayOfPlayers[i] = `.computer`)
-      : (arrayOfPlayers[i] = `.player${[i + 1]}`);
+  for (let i = 0; i < totalPlayers; i++) {
+    arrayOfPlayers.push(new Player({ id: `player${i + 1}`, score: 0 }));
   }
+
+  arrayOfPlayers.push(new Player({ id: 'computer', score: 0 }));
+  console.log(arrayOfPlayers);
 
   return arrayOfPlayers;
 };
