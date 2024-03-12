@@ -1,3 +1,5 @@
+import { Card } from '../models/card';
+
 /**
  *
  * @param {Array<String>} deck

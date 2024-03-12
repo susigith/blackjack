@@ -8,6 +8,10 @@ export class Card {
     this.#cardValue = cardValue;
   }
 
+  get cardType() {
+    return this.#cardType;
+  }
+
   get cardValue() {
     return this.#cardValue;
   }
