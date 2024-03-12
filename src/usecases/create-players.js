@@ -13,7 +13,6 @@ export const createPlayers = () => {
   }
 
   arrayOfPlayers.push(new Player({ id: 'computer', score: 0 }));
-  console.log(arrayOfPlayers);
 
   return arrayOfPlayers;
 };

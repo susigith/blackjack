@@ -5,14 +5,13 @@ import { scoreCalculator } from './usecases/score-calculator';
 import { stopGame } from './usecases/stop-game';
 
 export const Blackjack = () => {
-  let newGameConfig;
   let deck;
   let arrayOfPlayers;
   let currentPlayer;
 
   const btnNuevoJuego = document.querySelector('.new-game');
   btnNuevoJuego.addEventListener('click', () => {
-    newGameConfig = newGame();
+    let newGameConfig = newGame();
 
     deck = newGameConfig.deck;
     arrayOfPlayers = newGameConfig.arrayOfPlayers;
@@ -30,7 +29,7 @@ export const Blackjack = () => {
 
   const btnStopGame = document.querySelector('.stop-game');
   btnStopGame.addEventListener('click', () => {
-    stopGame();
+    stopGame(currentPlayer);
     currentPlayer = arrayOfPlayers.shift();
     console.log(currentPlayer);
   });

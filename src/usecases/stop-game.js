@@ -1,3 +1,3 @@
-export const stopGame = () => {
-  console.log('stopGame');
+export const stopGame = (currentPlayer) => {
+  console.log(currentPlayer);
 };
