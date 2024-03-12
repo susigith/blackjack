@@ -7,4 +7,8 @@ export class Card {
     this.#cardType = cardType;
     this.#cardValue = cardValue;
   }
+
+  get cardValue() {
+    return this.#cardValue;
+  }
 }
