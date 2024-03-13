@@ -23,9 +23,12 @@ export const Blackjack = (element) => {
 
   const btnRequestCard = document.querySelector('.request-card');
   btnRequestCard.addEventListener('click', () => {
+    const playerScore = document.querySelector(`.${currentPlayer.id}-score`);
     let card = requestCard(deck);
+
     renderCard(card.cardType, currentPlayer.id);
     currentPlayer.score = scoreCalculator(currentPlayer, card);
+    playerScore.innerText = ` - ${currentPlayer.score}`;
     console.log(currentPlayer);
   });
 
