@@ -29,6 +29,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -41,11 +42,11 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 100vh;
   margin: 0 auto;
   min-width: 768px;
   text-align: center;
   width: 100vw;
+  min-height: 100vh;
 }
 
 .logo {
@@ -112,25 +113,26 @@ h2 {
   display: inline;
 }
 
-.player1,
-.computer {
-  text-align: left;
-  margin-left: 2em;
-}
-
-.computer {
-  margin-top: 2em;
+.controls {
+  height: 5vh;
 }
 
 .game-table {
-  margin-top: 3.8em;
+  margin-top: 5vh;
+  display: grid;
+}
+
+.game-table div {
+  text-align: left;
+  margin-left: 2em;
+  min-height: 15vh;
 }
 
 .cards-deck {
   margin-top: 1em;
-  min-height: 17em;
+  min-height: 10vh;
 }
 
 .cards {
-  height: 17em;
+  height: 20vh;
 }

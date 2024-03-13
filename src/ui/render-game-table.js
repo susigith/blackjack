@@ -6,11 +6,13 @@ export const renderGameTable = (totalPlayers, element) => {
     const playersDiv = document.createElement('div');
     const playerHeading = document.createElement('h2');
     const scoreHeading = document.createElement('h2');
+    const cardsDeckDiv = document.createElement('div');
 
     playersDiv.classList.add(`${totalPlayers[i].id}`);
+    cardsDeckDiv.classList.add('cards-deck');
     playerHeading.innerText = totalPlayers[i].name;
 
-    playersDiv.append(playerHeading, scoreHeading);
+    playersDiv.append(playerHeading, scoreHeading, cardsDeckDiv);
     gameTable.appendChild(playersDiv);
   }
 
