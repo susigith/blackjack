@@ -2,7 +2,7 @@ import { createDeck } from './create-deck';
 import { createPlayers } from './create-players';
 /**
  *
- * @returns {ObjectLike<Array>} returns shuffle deck an players object
+ * @returns {ObjectLike<Array, Array>} returns shuffle deck and array of players object
  */
 export const newGame = () => {
   const deck = createDeck();

@@ -1,10 +1,11 @@
 import { renderCard } from './ui/render-card';
+import { renderGameTable } from './ui/render-game-table';
 import { newGame } from './usecases/new-game';
 import { requestCard } from './usecases/request-card';
 import { scoreCalculator } from './usecases/score-calculator';
 import { stopGame } from './usecases/stop-game';
 
-export const Blackjack = () => {
+export const Blackjack = (element) => {
   let deck;
   let arrayOfPlayers;
   let currentPlayer;
@@ -15,6 +16,7 @@ export const Blackjack = () => {
 
     deck = newGameConfig.deck;
     arrayOfPlayers = newGameConfig.arrayOfPlayers;
+    renderGameTable(arrayOfPlayers, element);
 
     currentPlayer = arrayOfPlayers.shift();
   });

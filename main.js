@@ -3,4 +3,4 @@ import './style.css';
 
 const element = document.querySelector('#app');
 
-Blackjack();
+Blackjack(element);
