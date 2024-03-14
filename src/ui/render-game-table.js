@@ -16,7 +16,7 @@ export const renderGameTable = (arrayOfPlayers, element) => {
     const scoreHeading = document.createElement('h2');
 
     playersDiv.classList.add(`${arrayOfPlayers[i].id}`);
-    cardsDeckDiv.classList.add('cards-deck');
+    cardsDeckDiv.classList.add(`${arrayOfPlayers[i].id}-cards-deck`);
     scoreHeading.classList.add(`${arrayOfPlayers[i].id}-score`);
 
     playerHeading.innerText = arrayOfPlayers[i].name;

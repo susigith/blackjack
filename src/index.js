@@ -1,26 +1,21 @@
-import { renderCard } from './ui/render-card';
+import { renderCurrentPlayerMoves } from './ui/render-current-player-moves';
 import { renderGameTable } from './ui/render-game-table';
 import { newGame } from './usecases/new-game';
-import { requestCard } from './usecases/request-card';
-import { scoreCalculator } from './usecases/score-calculator';
-import { stopGame } from './usecases/stop-game';
+import { computerGame } from './usecases/stop-game';
 
 export const Blackjack = (element) => {
   let deck;
   let arrayOfPlayers;
   let currentPlayer;
+  let scoreBoard = [];
 
   const btnNuevoJuego = document.querySelector('.new-game');
   btnNuevoJuego.addEventListener('click', () => {
-    const gameTable = document.querySelector('.game-table');
-    if (gameTable) {
-      gameTable.remove();
-    }
-
     let newGameConfig = newGame();
 
     deck = newGameConfig.deck;
     arrayOfPlayers = newGameConfig.arrayOfPlayers;
+    scoreBoard = newGameConfig.scoreBoard;
     renderGameTable(arrayOfPlayers, element);
 
     currentPlayer = arrayOfPlayers.shift();
@@ -28,19 +23,34 @@ export const Blackjack = (element) => {
 
   const btnRequestCard = document.querySelector('.request-card');
   btnRequestCard.addEventListener('click', () => {
-    const playerScore = document.querySelector(`.${currentPlayer.id}-score`);
-    let card = requestCard(deck);
+    renderCurrentPlayerMoves(currentPlayer, deck);
 
-    renderCard(card.cardType, currentPlayer.id);
-    currentPlayer.score = scoreCalculator(currentPlayer, card);
-    playerScore.innerText = ` - ${currentPlayer.score}`;
-    console.log(currentPlayer);
+    if (currentPlayer.score === 21) {
+      setTimeout(() => {
+        alert(`21, ${currentPlayer.name} Gana 🥳`);
+      }, 1);
+    }
+
+    if (currentPlayer.score > 21) {
+      currentPlayer = arrayOfPlayers.shift();
+      setTimeout(() => {
+        alert(`¡Oh no! Te has pasado 🫣 \n Turno de ${currentPlayer.name}`);
+      }, 1);
+
+      if (currentPlayer.name === 'Computadora') {
+        computerGame(currentPlayer, scoreBoard, deck, arrayOfPlayers);
+      }
+    }
   });
 
   const btnStopGame = document.querySelector('.stop-game');
   btnStopGame.addEventListener('click', () => {
-    stopGame(currentPlayer);
+    scoreBoard.push(currentPlayer);
+
     currentPlayer = arrayOfPlayers.shift();
-    console.log(currentPlayer);
+
+    if (currentPlayer.name === 'Computadora') {
+      computerGame(currentPlayer, scoreBoard, deck, arrayOfPlayers);
+    }
   });
 };
