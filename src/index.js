@@ -12,6 +12,11 @@ export const Blackjack = (element) => {
 
   const btnNuevoJuego = document.querySelector('.new-game');
   btnNuevoJuego.addEventListener('click', () => {
+    const gameTable = document.querySelector('.game-table');
+    if (gameTable) {
+      gameTable.remove();
+    }
+
     let newGameConfig = newGame();
 
     deck = newGameConfig.deck;
