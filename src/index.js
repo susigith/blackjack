@@ -12,13 +12,13 @@ export const Blackjack = (element) => {
 
   const btnNuevoJuego = document.querySelector('.new-game');
   btnNuevoJuego.addEventListener('click', () => {
-    let newGameConfig = newGame(scoreBoard);
+    let newGameConfig = newGame(arrayOfPlayers, deck, scoreBoard);
 
     deck = newGameConfig.deck;
     arrayOfPlayers = newGameConfig.arrayOfPlayers;
     scoreBoard = newGameConfig.scoreBoard;
-    renderGameTable(arrayOfPlayers, element);
 
+    renderGameTable(arrayOfPlayers, element);
     currentPlayer = arrayOfPlayers.shift();
   });
 
