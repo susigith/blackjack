@@ -3,6 +3,7 @@ import { renderGameTable } from './ui/render-game-table';
 import { newGame } from './usecases/new-game';
 import { computerGame } from './usecases/computer-game';
 import { endGame } from './usecases/end-game';
+import { clearGameTable } from './ui/clear-game-table';
 
 export const Blackjack = (element) => {
   let deck;
@@ -12,7 +13,11 @@ export const Blackjack = (element) => {
 
   const btnNuevoJuego = document.querySelector('.new-game');
   btnNuevoJuego.addEventListener('click', () => {
+    btnRequestCard.disabled = false;
+    btnStopGame.disabled = false;
+
     let newGameConfig = newGame(arrayOfPlayers, deck, scoreBoard);
+    clearGameTable();
 
     deck = newGameConfig.deck;
     arrayOfPlayers = newGameConfig.arrayOfPlayers;
@@ -23,6 +28,7 @@ export const Blackjack = (element) => {
   });
 
   const btnRequestCard = document.querySelector('.request-card');
+  btnRequestCard.disabled = true;
   btnRequestCard.addEventListener('click', () => {
     renderCurrentPlayerMoves(currentPlayer, deck);
 
@@ -41,11 +47,14 @@ export const Blackjack = (element) => {
       if (currentPlayer.name === 'Computadora') {
         computerGame(currentPlayer, scoreBoard, deck, arrayOfPlayers);
         endGame(scoreBoard);
+        btnRequestCard.disabled = true;
+        btnStopGame.disabled = true;
       }
     }
   });
 
   const btnStopGame = document.querySelector('.stop-game');
+  btnStopGame.disabled = true;
   btnStopGame.addEventListener('click', () => {
     scoreBoard.push(currentPlayer);
     currentPlayer = arrayOfPlayers.shift();
@@ -53,6 +62,8 @@ export const Blackjack = (element) => {
     if (currentPlayer.name === 'Computadora') {
       computerGame(currentPlayer, scoreBoard, deck, arrayOfPlayers);
       endGame(scoreBoard);
+      btnRequestCard.disabled = true;
+      btnStopGame.disabled = true;
     }
   });
 };

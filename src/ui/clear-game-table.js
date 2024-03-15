@@ -1,7 +1,4 @@
-export const clearGameTable = (scoreBoard) => {
-  // Deshabilitar botones
-  //Limpiar tablero
-
+export const clearGameTable = () => {
   const gameTable = document.querySelector('.game-table');
 
   if (gameTable) {
