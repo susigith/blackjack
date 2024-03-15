@@ -13,18 +13,19 @@ export const Blackjack = (element) => {
 
   const btnNuevoJuego = document.querySelector('.new-game');
   btnNuevoJuego.addEventListener('click', () => {
-    btnRequestCard.disabled = false;
-    btnStopGame.disabled = false;
-
-    let newGameConfig = newGame(arrayOfPlayers, deck, scoreBoard);
     clearGameTable();
 
-    deck = newGameConfig.deck;
-    arrayOfPlayers = newGameConfig.arrayOfPlayers;
-    scoreBoard = newGameConfig.scoreBoard;
+    setTimeout(() => {
+      btnRequestCard.disabled = false;
+      btnStopGame.disabled = false;
 
-    renderGameTable(arrayOfPlayers, element);
-    currentPlayer = arrayOfPlayers.shift();
+      let newGameConfig = newGame(arrayOfPlayers, deck, scoreBoard);
+      deck = newGameConfig.deck;
+      arrayOfPlayers = newGameConfig.arrayOfPlayers;
+      scoreBoard = newGameConfig.scoreBoard;
+      renderGameTable(arrayOfPlayers, element);
+      currentPlayer = arrayOfPlayers.shift();
+    }, 1);
   });
 
   const btnRequestCard = document.querySelector('.request-card');
