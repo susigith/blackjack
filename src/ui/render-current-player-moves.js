@@ -1,7 +1,12 @@
-import { requestCard } from '../usecases/request-card';
-import { scoreCalculator } from '../usecases/score-calculator';
-import { renderCard } from './render-card';
+import { Player } from '../models';
+import { requestCard, scoreCalculator } from '../usecases';
+import { renderCard } from './';
 
+/**
+ *
+ * @param {Player} currentPlayer
+ * @param {Array<String>} deck
+ */
 export const renderCurrentPlayerMoves = (currentPlayer, deck) => {
   const playerScore = document.querySelector(`.${currentPlayer.id}-score`);
   let card = requestCard(deck);

@@ -3,6 +3,11 @@ export class Card {
   #cardType;
   #cardValue;
 
+  /**
+   *
+   * @param {String} cardType
+   * @param {Number} cardValue
+   */
   constructor({ cardType, cardValue }) {
     this.#cardType = cardType;
     this.#cardValue = cardValue;

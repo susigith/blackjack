@@ -1,5 +1,13 @@
-import { renderCurrentPlayerMoves } from '../ui/render-current-player-moves';
+import { Player } from '../models';
+import { renderCurrentPlayerMoves } from '../ui';
 
+/**
+ *
+ * @param {Player} currentPlayer
+ * @param {Array<Player>} scoreBoard
+ * @param {Array<String>} deck
+ * @param {Array<Player>} arrayOfPlayers
+ */
 export const computerGame = (
   currentPlayer,
   scoreBoard,

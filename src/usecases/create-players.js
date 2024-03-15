@@ -1,8 +1,9 @@
-import { Player } from '../models/player';
-import { askForPlayers } from './ask-for-players';
+import { Player } from '../models';
+import { askForPlayers } from './';
+
 /**
  *
- * @returns {Array<String>} return array of players
+ * @returns {Array<Player>} return array of players
  */
 export const createPlayers = () => {
   const totalPlayers = askForPlayers();

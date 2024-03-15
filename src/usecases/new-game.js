@@ -1,8 +1,12 @@
-import { createDeck } from './create-deck';
-import { createPlayers } from './create-players';
+import { Player } from '../models';
+import { createDeck, createPlayers } from './';
+
 /**
  *
- * @returns {ObjectLike<Array, Array>} returns shuffle deck and array of players object
+ * @param {Array<Player>} arrayOfPlayers
+ * @param {Array<String>} deck
+ * @param {Array<Player>} scoreBoard
+ * @returns {ObjectLike} returns new game config object
  */
 export const newGame = (arrayOfPlayers, deck, scoreBoard) => {
   arrayOfPlayers = createPlayers();

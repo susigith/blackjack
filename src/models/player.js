@@ -1,7 +1,9 @@
 export class Player {
   /**
    *
-   * @param {Like<Player>} param0
+   * @param {String} id
+   * @param {String} name
+   * @param {Number} score
    */
   constructor({ id, name, score }) {
     this.id = id;

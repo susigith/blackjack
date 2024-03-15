@@ -1,11 +1,10 @@
-import { Card } from '../models/card';
-import { Player } from '../models/player';
+import { Card, Player } from '../models';
 
 /**
  *
  * @param {Player} player
  * @param {Card} card
- * @returns
+ * @returns {Number} returns player score sum
  */
 export const scoreCalculator = (player, card) => {
   let { score } = player;

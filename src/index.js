@@ -1,10 +1,14 @@
-import { renderCurrentPlayerMoves } from './ui/render-current-player-moves';
-import { renderGameTable } from './ui/render-game-table';
-import { newGame } from './usecases/new-game';
-import { computerGame } from './usecases/computer-game';
-import { endGame } from './usecases/end-game';
-import { clearGameTable } from './ui/clear-game-table';
+import { newGame, computerGame, endGame } from './usecases';
+import {
+  renderCurrentPlayerMoves,
+  renderGameTable,
+  clearGameTable,
+} from './ui';
 
+/**
+ *
+ * @param {HTMLDivElement} element
+ */
 export const Blackjack = (element) => {
   let deck;
   let arrayOfPlayers;
