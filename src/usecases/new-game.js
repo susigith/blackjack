@@ -4,15 +4,9 @@ import { createPlayers } from './create-players';
  *
  * @returns {ObjectLike<Array, Array>} returns shuffle deck and array of players object
  */
-export const newGame = () => {
+export const newGame = (scoreBoard) => {
   const deck = createDeck();
-  let scoreBoard = [];
-  const arrayOfPlayers = createPlayers();
-  const gameTable = document.querySelector('.game-table');
-
-  if (gameTable) {
-    gameTable.remove();
-  }
+  scoreBoard = [];
 
   for (let i = deck.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
