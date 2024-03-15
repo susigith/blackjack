@@ -136,3 +136,11 @@ h2 {
 .cards {
   height: 20vh;
 }
+
+button:disabled {
+  background-color: #14723d5d;
+  color: rgba(255, 255, 255, 0.39);
+}
+button:disabled:hover {
+  border-color: #14723d5d;
+}
