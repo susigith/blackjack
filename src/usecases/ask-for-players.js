@@ -4,6 +4,7 @@
  */
 export const askForPlayers = () => {
   let totalPlayers = 1;
+  let attempts = 0;
 
   do {
     totalPlayers = Number(
@@ -12,6 +13,13 @@ export const askForPlayers = () => {
         1
       )
     );
+
+    attempts++;
+
+    if (attempts === 3) {
+      totalPlayers = 1;
+      break;
+    }
   } while (Number.isNaN(totalPlayers) || totalPlayers < 1 || totalPlayers > 4);
 
   return totalPlayers;
