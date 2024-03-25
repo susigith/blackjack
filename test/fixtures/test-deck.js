@@ -1,18 +1,18 @@
 export const testDeck = [
   {
+    cardType: 'KS',
+    cardValue: 10,
+  },
+  {
     cardType: '4H',
     cardValue: 4,
   },
   {
     cardType: '8C',
-    cardValue: 8,
+    cardValue: 3,
   },
   {
-    cardType: '6D',
-    cardValue: 6,
-  },
-  {
-    cardType: 'KS',
-    cardValue: 10,
+    cardType: '3D',
+    cardValue: 2,
   },
 ];
