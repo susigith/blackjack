@@ -8,15 +8,11 @@ jest
   .mockImplementation((message) => expect(message).toBe('Jugador 2 Gana 🥳'));
 
 describe('Test endGame', () => {
-  test('waits 1 second before alert the winner name', () => {
+  test('waits 1 second and then alert the winner name correctly', () => {
     endGame(testScoreBoard);
 
     expect(setTimeout).toHaveBeenCalledTimes(1);
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 1000);
-  });
-
-  test('should alert the winner name correctly', () => {
-    endGame(testScoreBoard);
 
     jest.runAllTimers();
     expect(alert).toHaveBeenCalledTimes(1);
