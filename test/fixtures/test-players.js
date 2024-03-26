@@ -8,12 +8,12 @@ export const currentPlayerComputer = new Player({
 
 const testPlayer1 = new Player({
   id: 'player1',
-  name: 'Jugador1',
+  name: 'Jugador 1',
   score: '10',
 });
 const testPlayer2 = new Player({
   id: 'player2',
-  name: 'Jugador2',
+  name: 'Jugador 2',
   score: '12',
 });
 
