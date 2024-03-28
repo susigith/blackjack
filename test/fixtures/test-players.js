@@ -18,5 +18,8 @@ const testPlayer2 = new Player({
 });
 
 export const testArrayOfPlayers = [currentPlayerComputer];
+export const testArrayOfOnePlayer = [testPlayer1, currentPlayerComputer];
+export const emptyTestArrayOfPlayers = [];
 
 export const testScoreBoard = [testPlayer1, testPlayer2];
+export const emptyTestScoreBoard = [];

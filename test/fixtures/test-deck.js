@@ -8,11 +8,11 @@ export const testDeck = [
     cardValue: 4,
   },
   {
-    cardType: '8C',
+    cardType: '3C',
     cardValue: 3,
   },
   {
-    cardType: '3D',
+    cardType: '2D',
     cardValue: 2,
   },
 ];
