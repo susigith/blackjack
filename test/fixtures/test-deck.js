@@ -1,3 +1,5 @@
+import { Card } from '../../src/models';
+
 export const testDeck = [
   {
     cardType: 'KS',
@@ -16,3 +18,8 @@ export const testDeck = [
     cardValue: 2,
   },
 ];
+
+export const testCard = new Card({
+  cardType: 'AS',
+  cardValue: 11,
+});

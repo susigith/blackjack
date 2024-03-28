@@ -6,7 +6,7 @@ export const currentPlayerComputer = new Player({
   score: 0,
 });
 
-const testPlayer1 = new Player({
+export const testPlayer1 = new Player({
   id: 'player1',
   name: 'Jugador 1',
   score: '10',

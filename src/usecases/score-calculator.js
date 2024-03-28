@@ -9,7 +9,7 @@ import { Card, Player } from '../models';
 export const scoreCalculator = (player, card) => {
   let { score } = player;
 
-  score = card.cardValue + score;
+  score = Number(card.cardValue) + Number(score);
 
   return score;
 };
