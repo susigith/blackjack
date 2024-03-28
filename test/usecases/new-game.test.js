@@ -31,6 +31,7 @@ describe('Test newGame', () => {
       deck: expect.any(Array),
       scoreBoard: [],
     });
+    expect(deck.length).toBe(testDeck.length);
     expect(JSON.stringify(deck)).not.toMatch(testDeckInitialValue);
   });
 });
