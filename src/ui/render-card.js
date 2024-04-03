@@ -1,5 +1,4 @@
 import { Card, Player } from '../models';
-
 /**
  *
  * @param {Card} card
@@ -10,7 +9,7 @@ export const renderCard = (card, jugador) => {
 
   const cardImg = document.createElement('img');
   cardImg.classList.add('cards');
-  cardImg.src = `../public/cartas/${card}.png`;
+  cardImg.src = `../../public/cartas/${card}.png`;
 
   cardsDeck.appendChild(cardImg);
 };
