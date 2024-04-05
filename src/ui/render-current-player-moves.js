@@ -8,6 +8,9 @@ import { renderCard } from './';
  * @param {Array<String>} deck
  */
 export const renderCurrentPlayerMoves = (currentPlayer, deck) => {
+  if (!currentPlayer || !deck)
+    throw new Error('Parameters currentPlayer and deck are required');
+
   const playerScore = document.querySelector(`.${currentPlayer.id}-score`);
   let card = requestCard(deck);
 
