@@ -6,6 +6,9 @@ import { Player } from '../models';
  * @param {HTMLDivElement} element
  */
 export const renderGameTable = (arrayOfPlayers, element) => {
+  if (!arrayOfPlayers || !element)
+    throw new Error('Parameters arrayOfPlayers and element are required');
+
   const gameTable = document.createElement('div');
   gameTable.classList.add('game-table');
 

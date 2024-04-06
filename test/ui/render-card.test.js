@@ -3,6 +3,8 @@ import { renderCard } from '../../src/ui';
 import { testCard } from '../fixtures/test-deck';
 import { testPlayer1 } from '../fixtures/test-players';
 
+beforeEach(() => (document.getElementsByTagName('html')[0].innerHTML = ''));
+
 describe('Test renderCard', () => {
   test('should render cards correctly', () => {
     const cardsDeck = document.createElement('div');
