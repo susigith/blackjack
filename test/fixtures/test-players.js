@@ -17,8 +17,27 @@ const testPlayer2 = new Player({
   score: '12',
 });
 
+const testPlayer3 = new Player({
+  id: 'player3',
+  name: 'Jugador 3',
+  score: 21,
+});
+
+const testPlayer4 = new Player({
+  id: 'player4',
+  name: 'Jugador 4',
+  score: 22,
+});
+
 export const testArrayOfPlayers = [currentPlayerComputer];
 export const testArrayOfOnePlayer = [testPlayer1, currentPlayerComputer];
+
+export const testBlackjackArrayOfPlayers = [testPlayer3, currentPlayerComputer];
+export const testBlackjackArrayOfPlayers2 = [
+  testPlayer4,
+  currentPlayerComputer,
+];
+
 export const emptyTestArrayOfPlayers = [];
 
 export const testScoreBoard = [testPlayer1, testPlayer2];
