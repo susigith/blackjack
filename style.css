@@ -109,6 +109,10 @@ h2 {
   display: inline;
 }
 
+hr {
+  border: 1px solid rgba(20, 114, 61, 0.2);
+}
+
 .player1,
 .player2,
 .player3,

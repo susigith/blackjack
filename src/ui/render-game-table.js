@@ -14,6 +14,7 @@ export const renderGameTable = (arrayOfPlayers, element) => {
 
   for (let i = 0; i < arrayOfPlayers.length; i++) {
     const playersDiv = document.createElement('div');
+    const hr = document.createElement('hr');
     const cardsDeckDiv = document.createElement('div');
     const playerHeading = document.createElement('h2');
     const scoreHeading = document.createElement('h2');
@@ -23,9 +24,9 @@ export const renderGameTable = (arrayOfPlayers, element) => {
     scoreHeading.classList.add(`${arrayOfPlayers[i].id}-score`);
 
     playerHeading.innerText = arrayOfPlayers[i].name;
-    scoreHeading.innerText = ` - ${arrayOfPlayers[i].score}`;
+    scoreHeading.innerText = ` - Puntuación ${arrayOfPlayers[i].score}`;
 
-    playersDiv.append(playerHeading, scoreHeading, cardsDeckDiv);
+    playersDiv.append(playerHeading, scoreHeading, hr, cardsDeckDiv);
     gameTable.appendChild(playersDiv);
   }
 

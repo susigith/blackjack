@@ -15,6 +15,6 @@ export const renderCurrentPlayerMoves = (currentPlayer, deck) => {
   let card = requestCard(deck);
 
   currentPlayer.score = scoreCalculator(currentPlayer, card);
-  playerScore.innerText = ` - ${currentPlayer.score}`;
+  playerScore.innerText = ` - Puntuación ${currentPlayer.score}`;
   renderCard(card.cardType, currentPlayer.id);
 };
