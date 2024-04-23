@@ -1,73 +1,73 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+* {
+  margin: 0;
 }
-a:hover {
-  color: #535bf2;
+
+:root {
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+html {
+  background: hotpink;
+  height: 100vh;
 }
 
 body {
+  background: rgb(0, 60, 0);
+  font-family: var(--tipo-principal);
+  color: rgba(255, 255, 255, 0.5);
+  height: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
 }
 
 #app {
-  background-image: url(./public/table-background.webp);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  margin: 0 auto;
-  min-width: 768px;
-  text-align: center;
-  width: 100vw;
-  min-height: 100vh;
+  width: 768px;
+  margin: auto;
+  height: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.controls {
+  padding: 2rem 0rem;
+  width: 363px;
+  margin: auto;
 }
 
 button {
@@ -76,12 +76,21 @@ button {
   border: 1px solid transparent;
   color: white;
   cursor: pointer;
-  font-family: inherit;
-  font-size: 1em;
-  font-weight: 500;
   margin-top: 1.2em;
   padding: 0.6em 1.2em;
   transition: border-color 0.25s;
+}
+
+button:disabled {
+  background-color: #14723d5d;
+  color: rgba(255, 255, 255, 0.39);
+}
+button:disabled:hover {
+  border-color: transparent;
+}
+
+button:hover {
+  border-color: #23c769;
 }
 
 .new-game {
@@ -92,55 +101,24 @@ button {
   border-color: #eba5f2;
 }
 
-button:hover {
-  border-color: #23c769;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
+.game-table {
+  display: grid;
 }
 
 h2 {
   display: inline;
 }
 
-.controls {
-  height: 5vh;
-}
-
-.game-table {
-  margin-top: 5vh;
-  display: grid;
-}
-
-.game-table div {
-  text-align: left;
-  margin-left: 2em;
-  min-height: 15vh;
-}
-
-.cards-deck {
-  margin-top: 1em;
-  min-height: 10vh;
+.player1,
+.player2,
+.player3,
+.player4,
+.computer {
+  padding: 0rem 0rem 1rem 0rem;
 }
 
 .cards {
-  height: 20vh;
-}
-
-button:disabled {
-  background-color: #14723d5d;
-  color: rgba(255, 255, 255, 0.39);
-}
-button:disabled:hover {
-  border-color: #14723d5d;
+  display: inline;
+  height: 20rem;
+  margin: 1rem -11rem 0rem 0rem;
 }
