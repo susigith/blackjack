@@ -9,7 +9,7 @@ export const askForPlayers = () => {
   do {
     totalPlayers = Number(
       prompt(
-        '¿Cuántos jugadores quieres en la mesa?  \n 💡 Introduce un numero del 1 al 4',
+        '¿Cuántos jugadores quieres en la mesa?  \n 💡 Introduce un numero del 1 al 3',
         1
       )
     );
@@ -20,7 +20,7 @@ export const askForPlayers = () => {
       totalPlayers = 1;
       break;
     }
-  } while (Number.isNaN(totalPlayers) || totalPlayers < 1 || totalPlayers > 4);
+  } while (Number.isNaN(totalPlayers) || totalPlayers < 1 || totalPlayers > 3);
 
   return totalPlayers;
 };

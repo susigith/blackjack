@@ -103,6 +103,7 @@ button:hover {
 
 .game-table {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 h2 {

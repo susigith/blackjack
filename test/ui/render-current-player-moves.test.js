@@ -27,7 +27,7 @@ describe('Test renderCurrentPlayerMoves', () => {
     expect(renderCard).toHaveBeenCalledWith(testCard.cardType, testPlayer1.id);
 
     expect(testPlayer1.score).toBe(21);
-    expect(playerScore.innerText).toBe(' - 21');
+    expect(playerScore.innerText).toBe(' - Puntuación 21');
   });
 
   test('should throw an Error if the parameters are not sent', () => {
