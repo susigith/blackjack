@@ -25,6 +25,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
   height: 100%;
   margin: 0;
+  min-width: 340px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -115,7 +116,7 @@ button:hover {
   height: 80vh;
   justify-items: center;
   margin: 1rem 0rem 0rem 0rem;
-  overflow-y: scroll;
+  overflow-y: scroll none;
   width: 100vw;
 }
 
