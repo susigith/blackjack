@@ -29,12 +29,20 @@ export const Blackjack = (element) => {
       scoreBoard = newGameConfig.scoreBoard;
       renderGameTable(arrayOfPlayers, element);
       currentPlayer = arrayOfPlayers.shift();
+
+      document
+        .querySelector(`.${currentPlayer.id} h2`)
+        .classList.add('flicker');
     }, 1);
   });
 
   const btnRequestCard = document.querySelector('.request-card');
   btnRequestCard.disabled = true;
   btnRequestCard.addEventListener('click', () => {
+    document
+      .querySelector(`.${currentPlayer.id} h2`)
+      .classList.remove('flicker');
+
     renderCurrentPlayerMoves(currentPlayer, deck);
 
     if (currentPlayer.score === 21) {
@@ -64,9 +72,16 @@ export const Blackjack = (element) => {
     scoreBoard.push(currentPlayer);
     currentPlayer = arrayOfPlayers.shift();
 
+    document.querySelector(`.${currentPlayer.id} h2`).classList.add('flicker');
+
     if (currentPlayer.name === 'Computadora') {
+      document
+        .querySelector(`.${currentPlayer.id} h2`)
+        .classList.remove('flicker');
+
       computerGame(currentPlayer, scoreBoard, deck, arrayOfPlayers);
       endGame(scoreBoard);
+
       btnRequestCard.disabled = true;
       btnStopGame.disabled = true;
     }
