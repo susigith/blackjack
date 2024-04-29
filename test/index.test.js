@@ -7,12 +7,7 @@ import { renderCurrentPlayerMoves } from '../src/ui/render-current-player-moves'
 import { testDeck } from './fixtures/test-deck';
 import { computerGame } from '../src/usecases/computer-game';
 import { endGame } from '../src/usecases/end-game';
-import {
-  emptyTestScoreBoard,
-  testArrayOfOnePlayer,
-  testBlackjackArrayOfPlayers,
-  testBlackjackArrayOfPlayers2,
-} from './fixtures/test-players';
+import { emptyTestScoreBoard, testArrayOfOnePlayer, testBlackjackArrayOfPlayers, testBlackjackArrayOfPlayers2 } from './fixtures/test-players';
 
 jest.mock('../src/ui/clear-game-table');
 jest.mock('../src/usecases/new-game');
@@ -23,9 +18,7 @@ jest.mock('../src/usecases/end-game');
 
 describe('Test Blackjack', () => {
   beforeEach(() => {
-    jest.useFakeTimers(),
-      jest.spyOn(global, 'setTimeout'),
-      jest.spyOn(global, 'alert').mockImplementation((message) => message);
+    jest.useFakeTimers(), jest.spyOn(global, 'setTimeout'), jest.spyOn(global, 'alert').mockImplementation((message) => message);
     jest.clearAllMocks(), jest.clearAllTimers();
   });
 
@@ -36,6 +29,16 @@ describe('Test Blackjack', () => {
           <button class="new-game">Nuevo Juego</button>
           <button class="request-card" disabled="">Pedir Carta</button>
           <button class="stop-game" disabled="">Detener</button>
+          <div class="game-table">
+          <div class="player3">
+          <h2 class="">Jugador 3</h2>
+          <h2 class="player1-score"> - Puntuación 21</h2>
+          </div>
+          <div class="computer">
+          <h2 class="flicker">Computadora</h2>
+          <h2 class="computer-score"> - Puntuación 0</h2>
+          </div>
+          </div>
         </div>`;
 
     Blackjack(element);
@@ -85,6 +88,16 @@ describe('Test Blackjack', () => {
           <button class="new-game">Nuevo Juego</button>
           <button class="request-card" disabled="">Pedir Carta</button>
           <button class="stop-game" disabled="">Detener</button>
+          <div class="game-table">
+          <div class="player4">
+          <h2 class="">Jugador 4</h2>
+          <h2 class="player1-score"> - Puntuación 22</h2>
+          </div>
+          <div class="computer">
+          <h2 class="flicker">Computadora</h2>
+          <h2 class="computer-score"> - Puntuación 0</h2>
+          </div>
+          </div>
         </div>`;
 
     Blackjack(element);
@@ -114,20 +127,13 @@ describe('Test Blackjack', () => {
     expect(renderCurrentPlayerMoves).toHaveBeenCalledWith(currentPlayer, deck);
     expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 1);
     expect(arrayOfPlayers.length).toBe(0);
-    expect(computerGame).toHaveBeenCalledWith(
-      currentPlayerComputer,
-      scoreBoard,
-      deck,
-      arrayOfPlayers
-    );
+    expect(computerGame).toHaveBeenCalledWith(currentPlayerComputer, scoreBoard, deck, arrayOfPlayers);
     expect(endGame).toHaveBeenCalledWith(scoreBoard);
     expect(btnPedirCarta).toBeDisabled();
     expect(btnDetener).toBeDisabled();
 
     jest.runOnlyPendingTimers();
-    expect(alert).toHaveBeenCalledWith(
-      `¡Oh no! Te has pasado 🫣 \n Turno de Computadora`
-    );
+    expect(alert).toHaveBeenCalledWith(`¡Oh no! Te has pasado 🫣 \n Turno de Computadora`);
   });
 
   test('should end game correctly', () => {
@@ -137,6 +143,16 @@ describe('Test Blackjack', () => {
           <button class="new-game">Nuevo Juego</button>
           <button class="request-card" disabled="">Pedir Carta</button>
           <button class="stop-game" disabled="">Detener</button>
+          <div class="game-table">
+          <div class="player1">
+          <h2 class="">Jugador 1</h2>
+          <h2 class="player1-score"> - Puntuación 10</h2>
+          </div>
+          <div class="computer">
+          <h2 class="flicker">Computadora</h2>
+          <h2 class="computer-score"> - Puntuación 0</h2>
+          </div>
+          </div>
         </div>`;
 
     Blackjack(element);
@@ -172,12 +188,7 @@ describe('Test Blackjack', () => {
     fireEvent.click(btnDetener);
 
     expect(scoreBoard).toContainEqual(currentPlayer);
-    expect(computerGame).toHaveBeenCalledWith(
-      currentPlayerComputer,
-      scoreBoard,
-      deck,
-      arrayOfPlayers
-    );
+    expect(computerGame).toHaveBeenCalledWith(currentPlayerComputer, scoreBoard, deck, arrayOfPlayers);
     expect(endGame).toHaveBeenCalledWith(scoreBoard);
     expect(btnPedirCarta).toBeDisabled();
     expect(btnDetener).toBeDisabled();
