@@ -1,30 +1,24 @@
-
 # Project Title
 
 A classic card game for up to 3 players! In this Blackjack, the objective is to be the first to reach 21 points (or as close as possible without going over) with the sum of the cards in your hand. A standard 52-card deck is used without jokers
 
-
 ## Acknowledgements
 
- - [Curso de JavaScript Moderno: Guía para dominar el lenguaje - Fernando Herrera](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+- [Curso de JavaScript Moderno: Guía para dominar el lenguaje - Fernando Herrera](https://cursos.devtalles.com/courses/javascript-moderno)
 
 ## Appendix
 
 Any additional information goes here
 
-
 ## Authors
 
 - [@susigith](https://github.com/susigith)
-
 
 ## Tech Stack
 
 **Client:** HTML, CSS, Javascript, Vite
 
 **Tests:** Jest, Testing Library
-
-
 
 ## Running Tests
 
@@ -33,7 +27,6 @@ To run tests, run the following command
 ```bash
   npm run test
 ```
-
 
 ## Development steps
 
@@ -60,15 +53,15 @@ This section describes the main steps followed to develop the Blackjack game
 
 4. Test
 
- - [Jest](https://jestjs.io/)
+- [Jest](https://jestjs.io/)
 
- `npm install --save-dev jest`
+`npm install --save-dev jest`
 
- - [Babel](https://babeljs.io/), para el uso de `imports` de Javascript
+- [Babel](https://babeljs.io/), para el uso de `imports` de Javascript
 
-  `npm install --save-dev @babel/core @babel/cli @babel/preset-env`
+`npm install --save-dev @babel/core @babel/cli @babel/preset-env`
 
- Luego agregar un fichero `babel.config.js` con la siguiente configuración:
+Luego agregar un fichero `babel.config.js` con la siguiente configuración:
 
 `module.exports = {
   presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
@@ -84,9 +77,6 @@ Agregar fichero `jest.config.js` con la siguiente configuración:
   testEnvironment: 'jest-environment-jsdom',
 };`
 
-Finalmente en cuanto a testing 
+Finalmente en cuanto a testing
 
 [DOM Testing Library](https://testing-library.com/docs/dom-testing-library/install) una solución muy liviana para probar nodos DOM (ya sea simulados con JSDOM como se proporciona de forma predeterminada con Jest o en el navegador).
-
-
-
