@@ -16,9 +16,7 @@ describe('Test renderCard', () => {
 
     // Utilizando custom jest matchers de @testing-library/jest-dom toBeInTheDocument
     expect(cardImg).toBeInTheDocument();
-    expect(cardImg.getAttribute('src')).toBe(
-      `../../public/cartas/${testCard.cardType}.png`
-    );
+    expect(cardImg.getAttribute('src')).toBe(`/cartas/${testCard.cardType}.png`);
   });
 
   test('should throw an Error if the parameters are not sent', () => {
@@ -30,8 +28,6 @@ describe('Test renderCard', () => {
     // cardsDeck.classList.add(`${testPlayer1.id}-cards-deck`); // class assignment omitted
     document.body.appendChild(cardsDeck);
 
-    expect(() => renderCard(testCard.cardType, testPlayer1.id)).toThrow(
-      'jugador deck cannot be found'
-    );
+    expect(() => renderCard(testCard.cardType, testPlayer1.id)).toThrow('jugador deck cannot be found');
   });
 });
