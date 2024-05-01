@@ -80,3 +80,7 @@ Agregar fichero `jest.config.js` con la siguiente configuración:
 Finalmente en cuanto a testing
 
 [DOM Testing Library](https://testing-library.com/docs/dom-testing-library/install) una solución muy liviana para probar nodos DOM (ya sea simulados con JSDOM como se proporciona de forma predeterminada con Jest o en el navegador).
+
+5. Despliegue en GitHub Pages
+
+- Crear un archivo de configuración de Vite `vite.config.js` y configurar la base de la url.
